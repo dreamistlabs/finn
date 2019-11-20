@@ -1,0 +1,59 @@
+{
+  "name": "@dreamistlabs/finn",
+  "version": "0.0.0-beta-0",
+  "description": "Finn helps you calculate financial data",
+  "homepage": "https://github.com/dreamistlabs/finn#readme",
+  "author": "Johnny Hu <johnny@dreamistlabs.com>",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamistlabs/finn.git"
+  },
+  "keywords": [
+    "finn",
+    "finnegan",
+    "finance",
+    "financial",
+    "analysis",
+    "calculations"
+  ],
+  "bugs": {
+    "url": "https://github.com/dreamistlabs/finn/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "pre-push": "npm run tslint && npm run test",
+    "prepublishOnly": "npm run build",
+    "test": "nyc ava",
+    "test:watch": "ava --watch",
+    "tslint": "tslint -c tslint.json -p tsconfig.json **/*.ts",
+    "watch": "tsc -w"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run pre-push"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@dreamistlabs/config-commitlint": "^1.0.2",
+    "@istanbuljs/nyc-config-typescript": "^0.1.3",
+    "@types/node": "^12.12.8",
+    "ava": "^1.2.1",
+    "coveralls": "^3.0.7",
+    "husky": "^3.0.9",
+    "nyc": "^14.1.1",
+    "prettier": "^1.19.1",
+    "source-map-support": "^0.5.16",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.2",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.7.2"
+  }
+}

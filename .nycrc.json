@@ -1,0 +1,12 @@
+{
+  "all": false,
+  "cache": true,
+  "check-coverage": true,
+  "exclude": ["node_modules", "src/__tests__", "dist"],
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "extension": [".ts"],
+  "include": ["src"],
+  "instrument": true,
+  "reporter": ["lcov", "text"],
+  "sourceMap": true
+}
