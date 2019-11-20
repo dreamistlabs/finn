@@ -28,12 +28,12 @@
     "prepublishOnly": "npm run build",
     "test": "nyc ava",
     "test:watch": "ava --watch",
-    "tslint": "tslint -c tslint.json -p tsconfig.json **/*.ts",
+    "tslint": "tslint -c tslint.json -p tsconfig.json src/**/*.ts",
     "watch": "tsc -w"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "commit-msg": "npm run tslint && commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "npm run pre-push"
     }
   },
